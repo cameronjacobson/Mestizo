@@ -1,0 +1,8 @@
+{
+	"name":"mestizo/mestizo",
+	"autoload": {
+		"psr-0": {
+			"Mestizo": "src/"
+		}
+	}
+}
