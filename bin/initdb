@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+
+$opts = getopt('',array(
+	'force'
+));
+
+$PATH = dirname(__DIR__);
+
+if(!file_exists($PATH.'/config/mestizo.db') || isset($opts['force'])){
+	$sqlite3 = trim(`which sqlite3`);
+
+	if(!empty($sqlite3)){
+		$command = 'cat '.$PATH.'/misc/schema.sql | '.$sqlite3.' '.$PATH.'/config/mestizo.db';
+		`$command`;
+	}
+	else{
+		echo 'CANNOT FIND SQLITE3'.PHP_EOL;
+	}
+}
+else{
+	echo 'DB ALREADY EXISTS'.PHP_EOL;
+}
