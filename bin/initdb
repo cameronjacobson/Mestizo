@@ -13,6 +13,8 @@ if(!file_exists($PATH.'/config/mestizo.db') || isset($opts['force'])){
 	if(!empty($sqlite3)){
 		$command = 'cat '.$PATH.'/misc/schema.sql | '.$sqlite3.' '.$PATH.'/config/mestizo.db';
 		`$command`;
+		$command = 'cat '.$PATH.'/misc/mimetypes.sql | '.$sqlite3.' '.$PATH.'/config/mestizo.db';
+		`$command`;
 	}
 	else{
 		echo 'CANNOT FIND SQLITE3'.PHP_EOL;

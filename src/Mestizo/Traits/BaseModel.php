@@ -1,20 +1,21 @@
 <?php
 
-namespace Traits;
+namespace Mestizo\Traits;
 
 trait BaseModel
 {
-	private $id;
+	/** @Id @Column(type="integer") @GeneratedValue */
+	public $id;
 
 	public function getId(){
 		return $this->id;  
 	}
 
-	public function __get(){
-		
+	public function __get($key){
+		return $this->$key;
 	}
 
-	public function __set(){
-		
+	public function __set($key,$value){
+		$this->$key = $value;
 	}
 }

@@ -2,11 +2,17 @@
 
 namespace Mestizo\Models;
 
-class Setting;
+/**
+ * @Entity 
+ * @Table(name="setting")
+ */
+class Setting
 {
 	use \Mestizo\Traits\BaseModel;
 
+	/** @Column(type="text") */
 	public $key;
+	/** @Column(type="text") */
 	public $value;
 
 	public function __construct(){

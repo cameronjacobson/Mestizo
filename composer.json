@@ -1,5 +1,8 @@
 {
 	"name":"mestizo/mestizo",
+	"require":{
+		"doctrine/orm": "*"
+	},
 	"autoload": {
 		"psr-0": {
 			"Mestizo": "src/"
