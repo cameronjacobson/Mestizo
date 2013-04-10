@@ -1,0 +1,5 @@
+#!/usr/bin/php
+<?php
+
+$cmd = 'm2sh reload -db '.dirname(__DIR__).'/config/mestizo.db -every';
+`$cmd`;

@@ -1,0 +1,5 @@
+#!/usr/bin/php
+<?php
+
+$cmd = 'm2sh start -db '.dirname(__DIR__).'/config/mestizo.db -every';
+`$cmd`;
